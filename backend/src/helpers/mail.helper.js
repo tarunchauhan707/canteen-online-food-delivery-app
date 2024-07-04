@@ -4,8 +4,8 @@ export const sendEmailReceipt = function (order) {
   const mailClient = getClient();
 
   mailClient.messages
-    .create('sandbox80bf0ab584cb42dbbf5cf0e9a249e188.mailgun.org', {
-      from: 'orders@foodmine.com',
+    .create('sandboxkey.mailgun.org', {
+      from: 'canteen07@gmail.com',
       to: order.user.email,
       subject: `Order ${order.id} is being processed`,
       html: getReceiptHtml(order),
