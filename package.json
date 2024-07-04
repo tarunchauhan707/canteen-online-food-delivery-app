@@ -1,0 +1,32 @@
+{
+  "name": "canteen-app",
+  "version": "1.0.0",
+  "description": "## 1. Demo And Installation",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd backend && npm start",
+    "build": "cd frontend && npm run build",
+    "postbuild": "move frontend/build backend/src/public"
+  },
+  "keywords": [],
+  "author": "tarunchauhan23",
+  "license": "ISC",
+  "engines": {
+    "node": ">=18 <19"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^9.0.2"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tarunchauhan707/Canteen-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tarunchauhan707/Canteen-app/issues"
+  },
+  "homepage": "https://github.com/tarunchauhan707/Canteen-app#readme"
+}
