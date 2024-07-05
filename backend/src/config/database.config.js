@@ -1,6 +1,8 @@
 import { connect, set } from 'mongoose';
 import { UserModel } from '../models/user.model.js';
 import { FoodModel } from '../models/food.model.js';
+import {AdminModel} from '../models/admin.model.js';
+import {DUserModel} from '../models/deparmentaluser.model.js';
 
 import bcrypt from 'bcryptjs';
 const PASSWORD_HASH_SALT_ROUNDS = 10;
@@ -13,6 +15,8 @@ export const dbconnect = async () => {
       useUnifiedTopology: true,
     });
     await seedUsers();
+    await seedDUsers();
+    await seedAdmin();
     await seedFoods();
     console.log('connect successfully---');
   } catch (error) {
@@ -26,13 +30,21 @@ async function seedUsers() {
     console.log('Users seed is already done!');
     return;
   }
-
-  for (let user of sample_users) {
-    user.password = await bcrypt.hash(user.password, PASSWORD_HASH_SALT_ROUNDS);
-    await UserModel.create(user);
+}
+async function seedDUsers() {
+  const dusersCount = await DUserModel.countDocuments();
+  if (dusersCount > 0) {
+    console.log('DUsers seed is already done!');
+    return;
   }
+}
 
-  console.log('Users seed is done!');
+async function seedAdmin() {
+  const adminCount = await AdminModel.countDocuments();
+  if (adminCount > 0) {
+    console.log('admin seed is already done!');
+    return;
+  }
 }
 
 async function seedFoods() {
@@ -40,11 +52,6 @@ async function seedFoods() {
   if (foods > 0) {
     console.log('Foods seed is already done!');
     return;
-  }
-
-  for (const food of sample_foods) {
-    food.imageUrl = `/foods/${food.imageUrl}`;
-    await FoodModel.create(food);
   }
 
   console.log('Foods seed Is Done!');

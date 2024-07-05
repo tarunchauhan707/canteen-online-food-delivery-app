@@ -31,10 +31,12 @@ export default function LoginPage() {
   };
 
   return (
+    <div>
     <div className={classes.container}>
       <div className={classes.details}>
         <Title title="Login" />
         <form onSubmit={handleSubmit(submit)} noValidate>
+          
           <Input
             type="email"
             label="Email"
@@ -64,8 +66,9 @@ export default function LoginPage() {
           </div>
         </form>
       </div>
-
-      <CopyRight />
     </div>
+    <footer><CopyRight /></footer>
+  </div>
+
   );
 }

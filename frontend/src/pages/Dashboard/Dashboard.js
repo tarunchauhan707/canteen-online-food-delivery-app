@@ -38,6 +38,14 @@ const allItems = [
     color: 'white',
   },
   {
+    title: 'Deparmental Orders',
+    imageUrl: '/icons/orders.svg',
+    url: '/orders',
+    forAdmin: true,
+    bgColor: '#D20062',
+    color: 'white',
+  },
+  {
     title: 'Profile',
     imageUrl: '/icons/profile.svg',
     url: '/profile',
@@ -49,15 +57,24 @@ const allItems = [
     imageUrl: '/icons/users.svg',
     url: '/admin/users',
     forAdmin: true,
-    bgColor: '#00bfa5',
+    bgColor: '#90D26D',
     color: 'white',
   },
+  {
+    title: 'Departmental',
+    imageUrl: '/icons/users.svg',
+    url: '/admin/users',
+    forAdmin: true,
+    bgColor: '#EE4E4E',
+    color: 'white',
+  },
+
   {
     title: 'Foods',
     imageUrl: '/icons/foods.svg',
     url: '/admin/foods',
     forAdmin: true,
-    bgColor: '#e040fb',
+    bgColor: '#FAA300',
     color: 'white',
   },
 ];

@@ -1,4 +1,4 @@
-import { useState ,useEffect } from 'react';
+import { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import Input from '../../components/Input/Input';
 import Title from '../../components/Title/Title';
@@ -39,7 +39,6 @@ export default function RegisterPage() {
   };
 
   return (
-    <div>
     <div className={classes.container}>
       <div className={classes.details}>
         <Title title="Register" />
@@ -95,16 +94,6 @@ export default function RegisterPage() {
                 })}
                 error={errors.confirmPassword}
               />
-               <Input
-                 type="text"
-                 label="Address"
-                 {...register('address', {
-                   required: true,
-                   minLength: 15,
-                })}
-                error={errors.address}
-               />
-
             </div>
           ) : (
             <div>
@@ -160,15 +149,6 @@ export default function RegisterPage() {
                 })}
                 error={errors.confirmPassword}
               />
-              <Input
-                 type="text"
-                 label="Address"
-                 {...register('address', {
-                   required: true,
-                   minLength: 15,
-                })}
-                error={errors.address}
-               />
             </div>
           )}
           <Button type="submit" text="Register" />
@@ -181,8 +161,8 @@ export default function RegisterPage() {
           </div>
         </form>
       </div>
-    </div>
-    <footer><CopyRight /></footer>
+
+      <CopyRight />
     </div>
   );
 }
